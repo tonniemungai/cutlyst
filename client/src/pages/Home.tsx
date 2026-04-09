@@ -44,12 +44,12 @@ export default function Home() {
   ];
 
   const portfolioItems = [
-    { title: "Tech Startup Launch Video", category: "Commercial", description: "High-energy promotional video for a SaaS startup launch." },
-    { title: "Corporate Training Series", category: "Educational", description: "Multi-part training series with motion graphics and voiceover." },
-    { title: "Product Demo Reel", category: "Product", description: "Sleek product demonstration video with smooth transitions." },
-    { title: "Event Highlight Reel", category: "Event", description: "Fast-paced event recap with dynamic cuts and music." },
-    { title: "Brand Documentary", category: "Documentary", description: "In-depth brand story told through cinematic editing." },
-    { title: "Social Media Campaign", category: "Social", description: "Series of short-form videos optimized for Instagram and TikTok." },
+    { title: "Tech Startup Launch Video", category: "Commercial", description: "High-energy promotional video for a SaaS startup launch.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+    { title: "Corporate Training Series", category: "Educational", description: "Multi-part training series with motion graphics and voiceover.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+    { title: "Product Demo Reel", category: "Product", description: "Sleek product demonstration video with smooth transitions.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+    { title: "Event Highlight Reel", category: "Event", description: "Fast-paced event recap with dynamic cuts and music.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+    { title: "Brand Documentary", category: "Documentary", description: "In-depth brand story told through cinematic editing.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+    { title: "Social Media Campaign", category: "Social", description: "Series of short-form videos optimized for Instagram and TikTok.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
   ];
 
   const testimonials = [
@@ -62,6 +62,30 @@ export default function Home() {
     { name: "Alex Morgan", role: "Lead Editor", bio: "10+ years of professional video editing experience across commercials, documentaries, and digital content." },
     { name: "Jordan Lee", role: "Motion Graphics Specialist", bio: "Expert in creating dynamic animations and visual effects that bring stories to life." },
     { name: "Casey Williams", role: "Sound Designer", bio: "Passionate about audio quality and creating immersive soundscapes that enhance every project." },
+  ];
+
+
+  const clientLogos = [
+    { name: "TechFlow Inc.", emoji: "🏢" },
+    { name: "Creative Agency Co.", emoji: "🎬" },
+    { name: "StartUp Ventures", emoji: "🚀" },
+    { name: "Digital Media Group", emoji: "📱" },
+  ];
+
+
+
+  
+  const mediaFeatures = [
+    { publication: "Video Production Weekly", emoji: "📺" },
+    { publication: "Creative Insider", emoji: "🎥" },
+    { publication: "Tech Media Today", emoji: "📰" },
+    { publication: "Industry Awards 2025", emoji: "🌟" },
+  ];
+
+  const awards = [
+    { title: "Best Video Editing Agency 2025", organization: "Creative Excellence Awards", emoji: "🏆" },
+    { title: "Top 10 Agencies", organization: "Industry Leaders Magazine", emoji: "⭐" },
+    { title: "Client Choice Award", organization: "Service Excellence Network", emoji: "🎯" },
   ];
 
   const caseStudies = [
@@ -137,8 +161,17 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {portfolioItems.map((item, idx) => (
               <div key={idx} className="neobrutalist-card group cursor-pointer hover:shadow-lg transition">
-                <div className="bg-muted h-48 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
-                  <Play className="text-primary text-4xl opacity-60 group-hover:opacity-100 transition" />
+                <div className="bg-muted h-48 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden border-2 border-foreground">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={item.videoUrl}
+                    title={item.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0"
+                  />
                 </div>
                 <p className="text-sm text-primary mb-2" style={{ fontFamily: "'Space Mono', monospace" }}>{item.category}</p>
                 <h3 style={{ fontSize: "18px", color: "#FF6B4A" }}>{item.title}</h3>
@@ -149,7 +182,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Social Proof Section */}
+      <section className="section-light py-20 md:py-32">
+        <div className="container">
+          <h2 className="text-center mb-16">Trusted by Industry Leaders</h2>
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            {clientLogos.map((client, idx) => (
+              <div key={idx} className="neobrutalist-card text-center">
+                <div className="text-5xl mb-4">{client.emoji}</div>
+                <p style={{ fontFamily: "'Space Mono', monospace" }}>{client.name}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-card border-2 border-foreground rounded-lg p-8 mb-16">
+            <h3 style={{ fontSize: "24px", color: "#FF6B4A" }} className="text-center mb-8">As Featured In</h3>
+            <div className="grid md:grid-cols-4 gap-6 text-center">
+              {mediaFeatures.map((mention, idx) => (
+                <div key={idx} style={{ fontFamily: "'Space Mono', monospace" }}>
+                  <p className="text-lg font-bold text-primary">{mention.emoji}</p>
+                  <p className="text-sm mt-2">{mention.publication}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {awards.map((item, idx) => (
+              <div key={idx} className="neobrutalist-card text-center">
+                <p className="text-4xl mb-4">{item.emoji}</p>
+                <h3 style={{ fontSize: "18px", color: "#FF6B4A" }}>{item.title}</h3>
+                <p className="text-sm mt-3" style={{ fontFamily: "'Space Mono', monospace" }}>{item.organization}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+            {/* Testimonials Section */}
       <section className="section-dark py-20 md:py-32">
         <div className="container">
           <h2 className="text-center mb-16">What Our Clients Say</h2>

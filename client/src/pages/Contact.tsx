@@ -33,8 +33,9 @@ export default function Contact() {
           </button>
           <nav className="hidden md:flex gap-8">
             <button onClick={() => navigate("/")} className="hover:text-primary transition">Home</button>
-            <button onClick={() => navigate("/about")} className="hover:text-primary transition">About</button>
             <button onClick={() => navigate("/services")} className="hover:text-primary transition">Services</button>
+            <button onClick={() => navigate("/about")} className="hover:text-primary transition">About</button>
+            <button onClick={() => navigate("/blog")} className="hover:text-primary transition">Blog</button>
           </nav>
           <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">Get a Quote</a>
         </div>
@@ -217,8 +218,9 @@ export default function Contact() {
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
                 <li><a href="/" className="hover:underline">Home</a></li>
+                <li><a href="/services" className="hover:underline">Services</a></li>
                 <li><a href="/about" className="hover:underline">About</a></li>
-                <li><a href="/contact" className="hover:underline">Contact</a></li>
+                <li><a href="/blog" className="hover:underline">Blog</a></li>
               </ul>
             </div>
             <div>
