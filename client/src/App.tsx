@@ -10,6 +10,12 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import PortfolioDetail from "./pages/PortfolioDetail";
+import IndustryBusiness from "./pages/IndustryBusiness";
+import IndustryTechnology from "./pages/IndustryTechnology";
+import IndustryMakeMoney from "./pages/IndustryMakeMoney";
+import IndustryAgency from "./pages/IndustryAgency";
+import IndustryNewsletters from "./pages/IndustryNewsletters";
+import IndustryFinance from "./pages/IndustryFinance";
 
 
 function Router() {
@@ -21,6 +27,12 @@ function Router() {
       <Route path={"/contact"} component={Contact} />
       <Route path={"/blog"} component={Blog} />
       <Route path={"/portfolio/:id"} component={PortfolioDetail} />
+      <Route path={"/industry/business"} component={IndustryBusiness} />
+      <Route path={"/industry/technology"} component={IndustryTechnology} />
+      <Route path={"/industry/make-money"} component={IndustryMakeMoney} />
+      <Route path={"/industry/agency"} component={IndustryAgency} />
+      <Route path={"/industry/newsletters"} component={IndustryNewsletters} />
+      <Route path={"/industry/finance"} component={IndustryFinance} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

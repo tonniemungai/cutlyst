@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function Home() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const nextTestimonial = () => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   const prevTestimonial = () => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -54,7 +55,18 @@ export default function Home() {
     { title: "Agency Business Mastery", category: "Agency", description: "10 Agency Ideas to Start and Make Money - Build your agency from scratch.", videoUrl: "https://www.youtube.com/embed/uHt_9-8af8E" },
     { title: "Side Hustle Secrets", category: "Make Money", description: "Unbelievable Side Hustle Secrets to Make Insane Money - Proven income streams.", videoUrl: "https://www.youtube.com/embed/x1c59c0ytYw" },
     { title: "Online Business Formula", category: "Business", description: "The Hidden Formula to Start an Online Business and Get Rich Quick - Complete roadmap.", videoUrl: "https://www.youtube.com/embed/tfpFpdnBGZk" },
-  ]
+    { title: "SaaS Business Development", category: "Technology", description: "10 SaaS Ideas That Will REALLY Make You Rich - Build profitable SaaS products.", videoUrl: "https://www.youtube.com/embed/MO7uwg5gZDo" },
+    { title: "SaaS with Full-Time Job", category: "Technology", description: "How To Start a SaaS Business with a Full-Time 9 to 5 Job - Balance work and entrepreneurship.", videoUrl: "https://www.youtube.com/embed/D8Z3-uqfxC0" },
+    { title: "Newsletter Marketing Mastery", category: "Newsletters", description: "How to Master Newsletter Marketing - Build and monetize your email list.", videoUrl: "https://www.youtube.com/embed/[NEWSLETTER_ID]" },
+    { title: "Blog Content with AI", category: "Newsletters", description: "How To Write a Blog Post With AI - Create content faster with AI assistance.", videoUrl: "https://www.youtube.com/embed/IqSgAQ-vwB8" },
+    { title: "Google Analytics for Business", category: "Finance", description: "The $1 Million Dollar Google Analytics 4 Business Opportunity - Unlock data-driven insights.", videoUrl: "https://www.youtube.com/embed/Gkbf6r2DutY" },
+    { title: "Escape the 9 to 5 Rat Race", category: "Make Money", description: "How to Escape the 9 to 5 Rat Race and Live a Life of Luxury - Financial freedom strategies.", videoUrl: "https://www.youtube.com/embed/njoApmvimQ0" },
+  ];
+
+  const categories = ["All", "Business", "Technology", "Make Money", "Agency", "Newsletters", "Finance"];
+  const filteredPortfolio = selectedCategory && selectedCategory !== "All" 
+    ? portfolioItems.filter(item => item.category === selectedCategory)
+    : portfolioItems;
 
 
   const clientLogos = [
@@ -163,8 +175,27 @@ export default function Home() {
       <section id="portfolio" className="section-light py-20 md:py-32">
         <div className="container">
           <h2 className="text-center mb-16">See Our Work in Action</h2>
+          <div className="flex flex-wrap gap-3 justify-center mb-12">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat === "All" ? null : cat)}
+                className={`px-6 py-2 border-2 rounded-full font-bold transition ${
+                  (cat === "All" && !selectedCategory) || selectedCategory === cat
+                    ? "bg-primary text-background border-primary"
+                    : "bg-background text-foreground border-foreground hover:bg-muted"
+                }`}
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: "14px",
+                }}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {portfolioItems.map((item, idx) => (
+            {filteredPortfolio.map((item, idx) => (
               <a href={`/portfolio/${idx}`} className="neobrutalist-card group cursor-pointer hover:shadow-lg transition block">
                 <div className="bg-muted h-48 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden border-2 border-foreground">
                   <iframe
