@@ -66,7 +66,7 @@ export default function Home() {
             <a href="#process" className="hover:text-primary transition">Process</a>
             <a href="#faq" className="hover:text-primary transition">FAQ</a>
           </nav>
-          <Button className="btn-primary">Get a Quote</Button>
+          <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">Get a Quote</a>
         </div>
       </header>
 
@@ -78,8 +78,8 @@ export default function Home() {
             Dynamic video editing that captivates, converts, and commands attention. Trusted by leading brands and creators worldwide.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button className="btn-primary text-lg px-8 py-6">Get a Free Quote</Button>
-            <Button className="btn-secondary text-lg px-8 py-6">View Portfolio</Button>
+            <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-6 inline-block">Get a Free Quote</a>
+            <a href="#portfolio" className="btn-secondary text-lg px-8 py-6 inline-block">View Portfolio</a>
           </div>
           <p className="text-sm mt-6" style={{ fontFamily: "'Space Mono', monospace" }}>30-day satisfaction guarantee</p>
         </div>
@@ -164,11 +164,11 @@ export default function Home() {
                   ${[499, 999, 1999][idx]}
                 </div>
                 <p className="text-sm mb-6" style={{ fontFamily: "'Space Mono', monospace" }}>per project</p>
-                <Button className="btn-primary w-full">Select Plan</Button>
+                <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary w-full inline-block text-center">Select Plan</a>
               </div>
             ))}
           </div>
-          <Button className="btn-secondary text-lg px-8 py-6 mt-12">Request Custom Quote</Button>
+          <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-secondary text-lg px-8 py-6 mt-12 inline-block">Request Custom Quote</a>
         </div>
       </section>
 
@@ -179,7 +179,7 @@ export default function Home() {
           <p className="text-lg mb-12 max-w-2xl mx-auto" style={{ fontFamily: "'Space Mono', monospace" }}>
             Let's create something extraordinary together. Get in touch with our team today.
           </p>
-          <Button className="btn-primary text-lg px-12 py-8">Get Started Now</Button>
+          <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-12 py-8 inline-block">Get Started Now</a>
         </div>
       </section>
 
