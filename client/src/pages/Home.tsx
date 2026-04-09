@@ -5,6 +5,10 @@ import { useState } from "react";
 
 export default function Home() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const nextTestimonial = () => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  const prevTestimonial = () => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   const services = [
     {
@@ -160,7 +164,7 @@ export default function Home() {
           <h2 className="text-center mb-16">See Our Work in Action</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {portfolioItems.map((item, idx) => (
-              <div key={idx} className="neobrutalist-card group cursor-pointer hover:shadow-lg transition">
+              <a href={`/portfolio/${idx}`} className="neobrutalist-card group cursor-pointer hover:shadow-lg transition block">
                 <div className="bg-muted h-48 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden border-2 border-foreground">
                   <iframe
                     width="100%"
@@ -176,7 +180,7 @@ export default function Home() {
                 <p className="text-sm text-primary mb-2" style={{ fontFamily: "'Space Mono', monospace" }}>{item.category}</p>
                 <h3 style={{ fontSize: "18px", color: "#FF6B4A" }}>{item.title}</h3>
                 <p className="mt-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>{item.description}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -219,25 +223,38 @@ export default function Home() {
         </div>
       </section>
 
-            {/* Testimonials Section */}
+            {/* Testimonials Slider Section */}
       <section className="section-dark py-20 md:py-32">
-        <div className="container">
+        <div className="container max-w-3xl">
           <h2 className="text-center mb-16">What Our Clients Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="neobrutalist-card bg-card">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={20} fill="#FF6B4A" stroke="#FF6B4A" />
-                  ))}
-                </div>
-                <p className="mb-6 italic" style={{ fontFamily: "'Space Mono', monospace" }}>"{testimonial.quote}"</p>
-                <div>
-                  <p className="font-bold" style={{ color: "#FF6B4A" }}>{testimonial.name}</p>
-                  <p className="text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>{testimonial.company}</p>
-                </div>
+          <div className="neobrutalist-card bg-card p-12">
+            <div className="flex gap-1 mb-6">
+              {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                <Star key={i} size={24} fill="#FF6B4A" stroke="#FF6B4A" />
+              ))}
+            </div>
+            <p className="text-lg mb-8 italic" style={{ fontFamily: "'Space Mono', monospace" }}>
+              "{testimonials[currentTestimonial].quote}"
+            </p>
+            <div className="mb-8 pb-8 border-b-2 border-foreground">
+              <p className="font-bold text-lg" style={{ color: "#FF6B4A" }}>{testimonials[currentTestimonial].name}</p>
+              <p className="text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>{testimonials[currentTestimonial].company}</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <button onClick={prevTestimonial} className="btn-primary px-6 py-3">← Previous</button>
+              <div className="flex gap-2">
+                {testimonials.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentTestimonial(idx)}
+                    className={`w-3 h-3 rounded-full transition ${
+                      idx === currentTestimonial ? "bg-primary" : "bg-muted"
+                    }`}
+                  />
+                ))}
               </div>
-            ))}
+              <button onClick={nextTestimonial} className="btn-primary px-6 py-3">Next →</button>
+            </div>
           </div>
         </div>
       </section>

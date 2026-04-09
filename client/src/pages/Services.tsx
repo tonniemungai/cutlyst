@@ -1,7 +1,19 @@
 import { useLocation } from "wouter";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 export default function Services() {
   const [, navigate] = useLocation();
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+
+  const faqItems = [
+    { question: "What types of videos do you edit?", answer: "We specialize in corporate videos, commercials, social media content, documentaries, promotional videos, and more. Our team has experience across all genres and styles." },
+    { question: "What is your typical turnaround time?", answer: "Turnaround times vary based on project complexity. Most projects are completed within 2-4 weeks. Rush services are available upon request." },
+    { question: "Do you offer revisions?", answer: "Yes! We include multiple revision rounds in our standard packages to ensure you're completely satisfied with the final product." },
+    { question: "What formats do you deliver in?", answer: "We deliver in all standard formats including MP4, MOV, ProRes, and more. We can also optimize for specific platforms like YouTube, Instagram, or TikTok." },
+    { question: "Can you work with raw footage from any camera?", answer: "Absolutely! We work with footage from all professional and consumer cameras, including DSLRs, mirrorless, cinema cameras, and smartphones." },
+    { question: "Do you offer color grading services?", answer: "Yes, color grading and color correction are included in our premium packages and available as standalone services." },
+  ];
 
   const services = [
     {
@@ -141,6 +153,34 @@ export default function Services() {
                 <h3 style={{ fontSize: "20px", color: "#FF6B4A" }}>{addon.title}</h3>
                 <p className="text-2xl font-bold my-4" style={{ color: "#FF6B4A" }}>{addon.price}</p>
                 <p className="text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>{addon.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Accordion Section */}
+      <section className="section-dark py-20 md:py-32">
+        <div className="container max-w-3xl">
+          <h2 className="text-center mb-16">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqItems.map((item, idx) => (
+              <div key={idx} className="neobrutalist-card">
+                <button
+                  onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
+                  className="w-full flex items-center justify-between p-6 hover:bg-muted transition"
+                >
+                  <h3 style={{ fontSize: "18px", color: "#FF6B4A" }} className="text-left">{item.question}</h3>
+                  <ChevronDown
+                    size={24}
+                    className={`transition-transform ${expandedFaq === idx ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {expandedFaq === idx && (
+                  <div className="px-6 pb-6 border-t-2 border-foreground">
+                    <p style={{ fontFamily: "'Space Mono', monospace" }} className="mt-4">{item.answer}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
