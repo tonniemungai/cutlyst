@@ -48,13 +48,13 @@ export default function Home() {
   ];
 
   const portfolioItems = [
-    { title: "Tech Startup Launch Video", category: "Commercial", description: "High-energy promotional video for a SaaS startup launch.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { title: "Corporate Training Series", category: "Educational", description: "Multi-part training series with motion graphics and voiceover.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { title: "Product Demo Reel", category: "Product", description: "Sleek product demonstration video with smooth transitions.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { title: "Event Highlight Reel", category: "Event", description: "Fast-paced event recap with dynamic cuts and music.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { title: "Brand Documentary", category: "Documentary", description: "In-depth brand story told through cinematic editing.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    { title: "Social Media Campaign", category: "Social", description: "Series of short-form videos optimized for Instagram and TikTok.", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-  ];
+    { title: "Revealing the Billion Dollar Business MrBeast Missed", category: "Business Analysis", description: "In-depth analysis of a billion-dollar business opportunity.", videoUrl: "https://www.youtube.com/embed/tGHRXpIm7hU" },
+    { title: "Building a $1 Million Dollar Business in Kenya", category: "Entrepreneurship", description: "Step-by-step guide to building a million-dollar business.", videoUrl: "https://www.youtube.com/embed/OMxvCTMPVU0" },
+    { title: "Unbelievable Side Hustle Secrets", category: "Side Hustle", description: "Proven strategies to generate significant income.", videoUrl: "https://www.youtube.com/embed/RhCKGjQMKkY" },
+    { title: "The Hidden Formula to Start an Online Business", category: "Business Strategy", description: "Discover the formula for launching a successful online business.", videoUrl: "https://www.youtube.com/embed/8Uh3-kkOZWs" },
+    { title: "How to Escape the 9 to 5 Rat Race", category: "Lifestyle", description: "Transform your life by achieving financial freedom.", videoUrl: "https://www.youtube.com/embed/nKfIKYP_eLs" },
+    { title: "10 Business Ideas To Start and Make Money", category: "Business Ideas", description: "Comprehensive guide to ten profitable business ideas.", videoUrl: "https://www.youtube.com/embed/VdKKRPvYMxU" },
+  ]
 
   const testimonials = [
     { name: "Sarah Chen", company: "TechFlow Inc.", rating: 5, quote: "PixelCut transformed our raw footage into a stunning promotional video. Their attention to detail is unmatched!" },
