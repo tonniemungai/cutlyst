@@ -16,6 +16,8 @@ import IndustryMakeMoney from "./pages/IndustryMakeMoney";
 import IndustryAgency from "./pages/IndustryAgency";
 import IndustryNewsletters from "./pages/IndustryNewsletters";
 import IndustryFinance from "./pages/IndustryFinance";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 
 function Router() {
@@ -32,7 +34,9 @@ function Router() {
       <Route path={"/industry/make-money"} component={IndustryMakeMoney} />
       <Route path={"/industry/agency"} component={IndustryAgency} />
       <Route path={"/industry/newsletters"} component={IndustryNewsletters} />
-      <Route path={"/industry/finance"} component={IndustryFinance} />
+       <Route path={"industry/finance"} component={IndustryFinance} />
+      <Route path={"/privacy"} component={Privacy} />
+      <Route path={"/terms"} component={Terms} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronDown, Play, Star } from "lucide-react";
 import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -46,6 +48,24 @@ export default function Home() {
     { title: "Tailored Solutions", description: "Customized editing packages to fit your unique project needs and budget." },
     { title: "Fast Turnaround", description: "Efficient workflows ensure timely delivery without compromising quality." },
     { title: "Client-Centric Approach", description: "Your satisfaction is our priority; we work closely with you every step of the way." },
+  ];
+
+  const howItWorks = [
+    { step: "1", title: "Submit Your Project", description: "Share your raw footage, project brief, and vision. Tell us about your goals and target audience." },
+    { step: "2", title: "Strategy & Planning", description: "Our team reviews your content and develops a customized editing strategy tailored to your needs." },
+    { step: "3", title: "Creative Editing", description: "We edit your video with precision, adding effects, color grading, sound design, and motion graphics." },
+    { step: "4", title: "Review & Revisions", description: "You review the first cut and provide feedback. We make revisions until you're completely satisfied." },
+    { step: "5", title: "Final Delivery", description: "Receive your polished video in all formats, optimized for your platforms and ready to publish." },
+  ];
+
+  const clients = [
+    { name: "Cinematic.co.ke", benefit: "Increased video engagement by 300% with professional editing" },
+    { name: "Leadscraping.io", benefit: "Reduced video production costs while maintaining premium quality" },
+    { name: "Newsletterfy.com", benefit: "Consistent weekly video content with fast turnaround times" },
+    { name: "Socialitix.com", benefit: "Enhanced social media presence with optimized video formats" },
+    { name: "Forextrader.co.ke", benefit: "Professional educational content that builds audience trust" },
+    { name: "RemoteJobsApp", benefit: "Compelling product demos and promotional videos" },
+    { name: "Tonnie Mungai", benefit: "High-volume content production with consistent quality" },
   ];
 
   const portfolioItems = [
@@ -120,25 +140,8 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-background border-b-2 border-foreground">
-        <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <div className="text-3xl font-bold" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>
-              PixelCut
-            </div>
-          </div>
-          <nav className="hidden md:flex gap-8">
-            <a href="#services" className="hover:text-primary transition">Services</a>
-            <a href="#portfolio" className="hover:text-primary transition">Portfolio</a>
-            <a href="#process" className="hover:text-primary transition">Process</a>
-            <a href="#team" className="hover:text-primary transition">Team</a>
-            <a href="#faq" className="hover:text-primary transition">FAQ</a>
-          </nav>
-          <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">Get a Quote</a>
-        </div>
-      </header>
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <Header />
 
       {/* Hero Section */}
       <section className="section-light py-20 md:py-32">
@@ -165,6 +168,46 @@ export default function Home() {
                 <div className="text-5xl mb-4">{service.icon}</div>
                 <h3 style={{ fontSize: "24px", color: "#FF6B4A" }}>{service.title}</h3>
                 <p className="mt-4" style={{ fontFamily: "'Space Mono', monospace" }}>{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Timeline Section */}
+      <section id="process" className="section-light py-20 md:py-32">
+        <div className="container">
+          <h2 className="text-center mb-16">How It Works</h2>
+          <div className="max-w-4xl mx-auto">
+            {howItWorks.map((item, idx) => (
+              <div key={idx} className="flex gap-8 mb-12 relative">
+                {idx !== howItWorks.length - 1 && (
+                  <div className="absolute left-12 top-24 w-1 h-16 bg-foreground" />
+                )}
+                <div className="flex-shrink-0">
+                  <div className="neobrutalist-card w-24 h-24 flex items-center justify-center" style={{ backgroundColor: "#FF6B4A" }}>
+                    <span className="text-3xl font-bold text-background" style={{ fontFamily: "'Chewy', cursive" }}>{item.step}</span>
+                  </div>
+                </div>
+                <div className="flex-grow pt-2">
+                  <h3 style={{ fontSize: "22px", color: "#FF6B4A" }}>{item.title}</h3>
+                  <p className="mt-2" style={{ fontFamily: "'Space Mono', monospace" }}>{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client Benefits Section */}
+      <section className="section-dark py-20 md:py-32">
+        <div className="container">
+          <h2 className="text-center mb-16">Results Our Clients Achieve</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {clients.map((client, idx) => (
+              <div key={idx} className="neobrutalist-card bg-card">
+                <h3 style={{ fontSize: "20px", color: "#FF6B4A" }}>{client.name}</h3>
+                <p className="mt-4" style={{ fontFamily: "'Space Mono', monospace" }}>{client.benefit}</p>
               </div>
             ))}
           </div>
@@ -443,46 +486,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground text-background border-t-2 border-background py-12">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="text-2xl font-bold mb-2" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>
-                PixelCut
-              </div>
-              <p style={{ fontFamily: "'Space Mono', monospace" }}>Crafting visual stories with precision and punch.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-                <li><a href="#services" className="hover:underline">Video Editing</a></li>
-                <li><a href="#services" className="hover:underline">Motion Graphics</a></li>
-                <li><a href="#services" className="hover:underline">Color Grading</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-                <li><a href="#team" className="hover:underline">Team</a></li>
-                <li><a href="#portfolio" className="hover:underline">Portfolio</a></li>
-                <li><a href="#faq" className="hover:underline">FAQ</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Follow Us</h4>
-              <ul className="space-y-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-                <li><a href="#" className="hover:underline">Instagram</a></li>
-                <li><a href="#" className="hover:underline">LinkedIn</a></li>
-                <li><a href="#" className="hover:underline">YouTube</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-background pt-8 text-center text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-            <p>&copy; 2026 PixelCut Studios. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+
+      <Footer />
     </div>
   );
 }
