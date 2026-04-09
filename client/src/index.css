@@ -43,83 +43,129 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  /* PixelCut Studios - Neubrutalism Design System */
+  /* Primary Accent: Vibrant Coral/Orange */
+  --primary: #FF6B4A;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #FF6B4A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: #FF6B4A;
+  --chart-2: #FF8B6B;
+  --chart-3: #FF6B4A;
+  --chart-4: #E55A39;
+  --chart-5: #CC4A28;
+  
+  --radius: 0.75rem;
+  
+  /* Light Cream Background */
+  --background: #FDF8D8;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  
+  /* Secondary & Muted */
+  --secondary: #F5F0E0;
+  --secondary-foreground: #1A1A1A;
+  --muted: #E8E3D3;
+  --muted-foreground: #4A4A4A;
+  
+  /* Accent */
+  --accent: #FF6B4A;
+  --accent-foreground: #FFFFFF;
+  
+  /* Destructive */
+  --destructive: #E55A39;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Borders & Input */
+  --border: #1A1A1A;
+  --input: #FFFFFF;
+  --ring: #FF6B4A;
+  
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-accent: #FF6B4A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #1A1A1A;
+  --sidebar-ring: #FF6B4A;
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --primary: #FF6B4A;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #FF6B4A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --background: #1A1A1A;
+  --foreground: #FFFFFF;
+  --card: #2A2A2A;
+  --card-foreground: #FFFFFF;
+  --popover: #2A2A2A;
+  --popover-foreground: #FFFFFF;
+  --secondary: #333333;
+  --secondary-foreground: #FFFFFF;
+  --muted: #404040;
+  --muted-foreground: #B0B0B0;
+  --accent: #FF6B4A;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E55A39;
+  --destructive-foreground: #FFFFFF;
+  --border: #FFFFFF;
+  --input: #2A2A2A;
+  --ring: #FF6B4A;
+  --chart-1: #FF6B4A;
+  --chart-2: #FF8B6B;
+  --chart-3: #FF6B4A;
+  --chart-4: #E55A39;
+  --chart-5: #CC4A28;
+  --sidebar: #2A2A2A;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-accent: #FF6B4A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #FFFFFF;
+  --sidebar-ring: #FF6B4A;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
     @apply bg-background text-foreground;
+    font-family: 'Space Mono', monospace;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Chewy', cursive;
+    color: #FF6B4A;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  
+  h1 {
+    font-size: 90px;
+    letter-spacing: 2.25px;
+    -webkit-text-stroke: 2px #1A1A1A;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 48px;
+    letter-spacing: 1.5px;
+    -webkit-text-stroke: 1.5px #1A1A1A;
+    margin-bottom: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -130,6 +176,23 @@
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
+  }
+  
+  /* Neubrutalism Button Styles */
+  button, [role="button"], [type="button"], [type="submit"], [type="reset"] {
+    border: 2px solid #1A1A1A;
+    box-shadow: 3px 3px 0px 0px #1A1A1A;
+    transition: all 0.1s ease-out;
+  }
+  
+  button:hover:not(:disabled), [role="button"]:hover:not([aria-disabled="true"]) {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px 0px #1A1A1A;
+  }
+  
+  button:active:not(:disabled) {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px 0px #1A1A1A;
   }
 }
 
@@ -158,6 +221,67 @@
   .flex {
     min-height: 0;
     min-width: 0;
+  }
+
+  /* Neubrutalism Card Component */
+  .neobrutalist-card {
+    @apply bg-card text-card-foreground;
+    border: 3px solid #1A1A1A;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0px 0px #1A1A1A;
+    padding: 24px;
+    transition: all 0.1s ease-out;
+  }
+
+  .neobrutalist-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px 0px #1A1A1A;
+  }
+
+  /* Neobrutalism Primary Button */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground;
+    border: 2px solid #1A1A1A;
+    border-radius: 50px;
+    box-shadow: 3px 3px 0px 0px #1A1A1A;
+    padding: 8px 24px;
+    font-family: 'Chewy', cursive;
+    font-size: 18px;
+    font-weight: 400;
+    transition: all 0.1s ease-out;
+  }
+
+  .btn-primary:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px 0px #1A1A1A;
+  }
+
+  /* Neobrutalism Secondary Button */
+  .btn-secondary {
+    @apply bg-card text-card-foreground;
+    border: 2px solid #1A1A1A;
+    border-radius: 50px;
+    box-shadow: 3px 3px 0px 0px #1A1A1A;
+    padding: 8px 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    transition: all 0.1s ease-out;
+  }
+
+  .btn-secondary:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px 0px #1A1A1A;
+  }
+
+  /* Neobrutalism Section */
+  .section-dark {
+    @apply bg-foreground text-background;
+    padding: 80px 0;
+  }
+
+  .section-light {
+    @apply bg-background text-foreground;
+    padding: 80px 0;
   }
 
   @media (min-width: 640px) {
