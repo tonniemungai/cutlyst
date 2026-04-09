@@ -48,25 +48,13 @@ export default function Home() {
   ];
 
   const portfolioItems = [
-    { title: "Revealing the Billion Dollar Business MrBeast Missed", category: "Business Analysis", description: "In-depth analysis of a billion-dollar business opportunity.", videoUrl: "https://www.youtube.com/embed/tGHRXpIm7hU" },
-    { title: "Building a $1 Million Dollar Business in Kenya", category: "Entrepreneurship", description: "Step-by-step guide to building a million-dollar business.", videoUrl: "https://www.youtube.com/embed/OMxvCTMPVU0" },
-    { title: "Unbelievable Side Hustle Secrets", category: "Side Hustle", description: "Proven strategies to generate significant income.", videoUrl: "https://www.youtube.com/embed/RhCKGjQMKkY" },
-    { title: "The Hidden Formula to Start an Online Business", category: "Business Strategy", description: "Discover the formula for launching a successful online business.", videoUrl: "https://www.youtube.com/embed/8Uh3-kkOZWs" },
-    { title: "How to Escape the 9 to 5 Rat Race", category: "Lifestyle", description: "Transform your life by achieving financial freedom.", videoUrl: "https://www.youtube.com/embed/nKfIKYP_eLs" },
-    { title: "10 Business Ideas To Start and Make Money", category: "Business Ideas", description: "Comprehensive guide to ten profitable business ideas.", videoUrl: "https://www.youtube.com/embed/VdKKRPvYMxU" },
+    { title: "Business Strategy & Entrepreneurship", category: "Business", description: "Revealing the Billion Dollar Business MrBeast Missed - Deep dive into untapped business opportunities.", videoUrl: "https://www.youtube.com/embed/tGHRXpIm7hU" },
+    { title: "Building Million Dollar Businesses", category: "Business", description: "Building a $1 Million Dollar Business in Kenya - Proven strategies for scaling businesses.", videoUrl: "https://www.youtube.com/embed/OudwWsK9E4k" },
+    { title: "Make Money Strategies", category: "Make Money", description: "10 Ways to Make your First $1000 Online - Actionable income generation tactics.", videoUrl: "https://www.youtube.com/embed/JMJ5SOt7FYM" },
+    { title: "Agency Business Mastery", category: "Agency", description: "10 Agency Ideas to Start and Make Money - Build your agency from scratch.", videoUrl: "https://www.youtube.com/embed/uHt_9-8af8E" },
+    { title: "Side Hustle Secrets", category: "Make Money", description: "Unbelievable Side Hustle Secrets to Make Insane Money - Proven income streams.", videoUrl: "https://www.youtube.com/embed/x1c59c0ytYw" },
+    { title: "Online Business Formula", category: "Business", description: "The Hidden Formula to Start an Online Business and Get Rich Quick - Complete roadmap.", videoUrl: "https://www.youtube.com/embed/tfpFpdnBGZk" },
   ]
-
-  const testimonials = [
-    { name: "Sarah Chen", company: "TechFlow Inc.", rating: 5, quote: "PixelCut transformed our raw footage into a stunning promotional video. Their attention to detail is unmatched!" },
-    { name: "Marcus Johnson", company: "Creative Agency Co.", rating: 5, quote: "Fast turnaround, excellent communication, and the final product exceeded our expectations. Highly recommended!" },
-    { name: "Emily Rodriguez", company: "StartUp Ventures", rating: 5, quote: "Professional, creative, and affordable. PixelCut is our go-to video editing partner." },
-  ];
-
-  const teamMembers = [
-    { name: "Alex Morgan", role: "Lead Editor", bio: "10+ years of professional video editing experience across commercials, documentaries, and digital content." },
-    { name: "Jordan Lee", role: "Motion Graphics Specialist", bio: "Expert in creating dynamic animations and visual effects that bring stories to life." },
-    { name: "Casey Williams", role: "Sound Designer", bio: "Passionate about audio quality and creating immersive soundscapes that enhance every project." },
-  ];
 
 
   const clientLogos = [
@@ -95,6 +83,19 @@ export default function Home() {
   const caseStudies = [
     { title: "SaaS Company Launch", client: "TechFlow Inc.", challenge: "Create a compelling launch video in 2 weeks.", result: "Delivered a 3-minute promotional video that generated 50K views in first week." },
     { title: "Educational Content Series", client: "Online Learning Platform", challenge: "Produce 12 training videos with consistent branding.", result: "Completed series on time with 95% client satisfaction rating." },
+  ];
+
+  const testimonials = [
+    { name: "Sarah Chen", company: "TechFlow Inc.", text: "PixelCut Studios transformed our product launch video. The quality and professionalism exceeded our expectations!", rating: 5 },
+    { name: "Marcus Johnson", company: "Creative Agency Co.", text: "Fast turnaround, excellent communication, and stunning results. Highly recommended for any video editing needs.", rating: 5 },
+    { name: "Emma Rodriguez", company: "StartUp Ventures", text: "The team understood our vision perfectly and delivered exactly what we needed. Great attention to detail!", rating: 5 },
+    { name: "David Kim", company: "Digital Media Group", text: "Professional, reliable, and creative. PixelCut Studios is now our go-to partner for all video projects.", rating: 5 },
+  ];
+
+  const teamMembers = [
+    { name: "Alex Turner", role: "Lead Editor", bio: "10+ years of video editing experience. Specializes in cinematic storytelling and motion graphics." },
+    { name: "Jordan Blake", role: "Creative Director", bio: "Award-winning director with expertise in commercial and promotional content production." },
+    { name: "Casey Morgan", role: "Sound Designer", bio: "Expert in audio mixing and sound design. Ensures every project has professional-grade audio." },
   ];
 
   const faqItems = [
@@ -234,7 +235,7 @@ export default function Home() {
               ))}
             </div>
             <p className="text-lg mb-8 italic" style={{ fontFamily: "'Space Mono', monospace" }}>
-              "{testimonials[currentTestimonial].quote}"
+              "{testimonials[currentTestimonial].text}"
             </p>
             <div className="mb-8 pb-8 border-b-2 border-foreground">
               <p className="font-bold text-lg" style={{ color: "#FF6B4A" }}>{testimonials[currentTestimonial].name}</p>
