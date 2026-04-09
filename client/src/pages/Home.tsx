@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronDown, Play } from "lucide-react";
+import { ChevronDown, Play, Star } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -43,12 +43,39 @@ export default function Home() {
     { title: "Client-Centric Approach", description: "Your satisfaction is our priority; we work closely with you every step of the way." },
   ];
 
+  const portfolioItems = [
+    { title: "Tech Startup Launch Video", category: "Commercial", description: "High-energy promotional video for a SaaS startup launch." },
+    { title: "Corporate Training Series", category: "Educational", description: "Multi-part training series with motion graphics and voiceover." },
+    { title: "Product Demo Reel", category: "Product", description: "Sleek product demonstration video with smooth transitions." },
+    { title: "Event Highlight Reel", category: "Event", description: "Fast-paced event recap with dynamic cuts and music." },
+    { title: "Brand Documentary", category: "Documentary", description: "In-depth brand story told through cinematic editing." },
+    { title: "Social Media Campaign", category: "Social", description: "Series of short-form videos optimized for Instagram and TikTok." },
+  ];
+
+  const testimonials = [
+    { name: "Sarah Chen", company: "TechFlow Inc.", rating: 5, quote: "PixelCut transformed our raw footage into a stunning promotional video. Their attention to detail is unmatched!" },
+    { name: "Marcus Johnson", company: "Creative Agency Co.", rating: 5, quote: "Fast turnaround, excellent communication, and the final product exceeded our expectations. Highly recommended!" },
+    { name: "Emily Rodriguez", company: "StartUp Ventures", rating: 5, quote: "Professional, creative, and affordable. PixelCut is our go-to video editing partner." },
+  ];
+
+  const teamMembers = [
+    { name: "Alex Morgan", role: "Lead Editor", bio: "10+ years of professional video editing experience across commercials, documentaries, and digital content." },
+    { name: "Jordan Lee", role: "Motion Graphics Specialist", bio: "Expert in creating dynamic animations and visual effects that bring stories to life." },
+    { name: "Casey Williams", role: "Sound Designer", bio: "Passionate about audio quality and creating immersive soundscapes that enhance every project." },
+  ];
+
+  const caseStudies = [
+    { title: "SaaS Company Launch", client: "TechFlow Inc.", challenge: "Create a compelling launch video in 2 weeks.", result: "Delivered a 3-minute promotional video that generated 50K views in first week." },
+    { title: "Educational Content Series", client: "Online Learning Platform", challenge: "Produce 12 training videos with consistent branding.", result: "Completed series on time with 95% client satisfaction rating." },
+  ];
+
   const faqItems = [
     { question: "What types of videos do you edit?", answer: "We specialize in corporate videos, commercials, social media content, documentaries, promotional videos, and more. Our team has experience across all genres and styles." },
     { question: "What is your typical turnaround time?", answer: "Turnaround times vary based on project complexity. Most projects are completed within 2-4 weeks. Rush services are available upon request." },
     { question: "Do you offer revisions?", answer: "Yes! We include multiple revision rounds in our standard packages to ensure you're completely satisfied with the final product." },
     { question: "What formats do you deliver in?", answer: "We deliver in all standard formats including MP4, MOV, ProRes, and more. We can also optimize for specific platforms like YouTube, Instagram, or TikTok." },
     { question: "Can you work with raw footage from any camera?", answer: "Absolutely! We work with footage from all professional and consumer cameras, including DSLRs, mirrorless, cinema cameras, and smartphones." },
+    { question: "Do you offer color grading services?", answer: "Yes, color grading and color correction are included in our premium packages and available as standalone services." },
   ];
 
   return (
@@ -63,7 +90,9 @@ export default function Home() {
           </div>
           <nav className="hidden md:flex gap-8">
             <a href="#services" className="hover:text-primary transition">Services</a>
+            <a href="#portfolio" className="hover:text-primary transition">Portfolio</a>
             <a href="#process" className="hover:text-primary transition">Process</a>
+            <a href="#team" className="hover:text-primary transition">Team</a>
             <a href="#faq" className="hover:text-primary transition">FAQ</a>
           </nav>
           <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">Get a Quote</a>
@@ -101,6 +130,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Portfolio Section */}
+      <section id="portfolio" className="section-light py-20 md:py-32">
+        <div className="container">
+          <h2 className="text-center mb-16">See Our Work in Action</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {portfolioItems.map((item, idx) => (
+              <div key={idx} className="neobrutalist-card group cursor-pointer hover:shadow-lg transition">
+                <div className="bg-muted h-48 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
+                  <Play className="text-primary text-4xl opacity-60 group-hover:opacity-100 transition" />
+                </div>
+                <p className="text-sm text-primary mb-2" style={{ fontFamily: "'Space Mono', monospace" }}>{item.category}</p>
+                <h3 style={{ fontSize: "18px", color: "#FF6B4A" }}>{item.title}</h3>
+                <p className="mt-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-dark py-20 md:py-32">
+        <div className="container">
+          <h2 className="text-center mb-16">What Our Clients Say</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, idx) => (
+              <div key={idx} className="neobrutalist-card bg-card">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} size={20} fill="#FF6B4A" stroke="#FF6B4A" />
+                  ))}
+                </div>
+                <p className="mb-6 italic" style={{ fontFamily: "'Space Mono', monospace" }}>"{testimonial.quote}"</p>
+                <div>
+                  <p className="font-bold" style={{ color: "#FF6B4A" }}>{testimonial.name}</p>
+                  <p className="text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>{testimonial.company}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section id="process" className="section-light py-20 md:py-32">
         <div className="container">
@@ -117,13 +188,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section id="team" className="section-dark py-20 md:py-32">
+        <div className="container">
+          <h2 className="text-center mb-16">Meet the Team</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {teamMembers.map((member, idx) => (
+              <div key={idx} className="neobrutalist-card bg-card">
+                <div className="bg-muted h-40 rounded-lg mb-4 flex items-center justify-center">
+                  <div className="text-6xl">👤</div>
+                </div>
+                <h3 style={{ fontSize: "22px", color: "#FF6B4A" }}>{member.name}</h3>
+                <p className="text-sm text-primary mt-2" style={{ fontFamily: "'Space Mono', monospace" }}>{member.role}</p>
+                <p className="mt-4 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>{member.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
-      <section className="section-dark py-20 md:py-32">
+      <section className="section-light py-20 md:py-32">
         <div className="container">
           <h2 className="text-center mb-16">The PixelCut Advantage</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {advantages.map((adv, idx) => (
-              <div key={idx} className="neobrutalist-card bg-card">
+              <div key={idx} className="neobrutalist-card">
                 <h3 style={{ fontSize: "24px", color: "#FF6B4A" }}>{adv.title}</h3>
                 <p className="mt-4" style={{ fontFamily: "'Space Mono', monospace" }}>{adv.description}</p>
               </div>
@@ -132,13 +222,84 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case Studies Section */}
+      <section className="section-dark py-20 md:py-32">
+        <div className="container">
+          <h2 className="text-center mb-16">Case Studies</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {caseStudies.map((study, idx) => (
+              <div key={idx} className="neobrutalist-card bg-card">
+                <h3 style={{ fontSize: "22px", color: "#FF6B4A" }}>{study.title}</h3>
+                <p className="text-sm text-primary mt-2" style={{ fontFamily: "'Space Mono', monospace" }}>Client: {study.client}</p>
+                <div className="mt-4 space-y-3">
+                  <div>
+                    <p className="text-sm font-bold">Challenge:</p>
+                    <p className="text-sm mt-1" style={{ fontFamily: "'Space Mono', monospace" }}>{study.challenge}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">Result:</p>
+                    <p className="text-sm mt-1" style={{ fontFamily: "'Space Mono', monospace" }}>{study.result}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="section-light py-20 md:py-32">
+        <div className="container text-center">
+          <h2 className="mb-16">Transparent Pricing, Exceptional Value</h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+            {["Basic", "Standard", "Premium"].map((tier, idx) => (
+              <div key={idx} className="neobrutalist-card">
+                <h3 style={{ fontSize: "24px", color: "#FF6B4A" }}>{tier}</h3>
+                <div className="text-4xl font-bold my-6" style={{ color: "#FF6B4A" }}>
+                  ${[499, 999, 1999][idx]}
+                </div>
+                <p className="text-sm mb-6" style={{ fontFamily: "'Space Mono', monospace" }}>per project</p>
+                <ul className="text-sm mb-6 space-y-2 text-left" style={{ fontFamily: "'Space Mono', monospace" }}>
+                  {idx === 0 && (
+                    <>
+                      <li>✓ Up to 5 min video</li>
+                      <li>✓ Basic editing</li>
+                      <li>✓ 2 revisions</li>
+                    </>
+                  )}
+                  {idx === 1 && (
+                    <>
+                      <li>✓ Up to 15 min video</li>
+                      <li>✓ Advanced editing</li>
+                      <li>✓ Motion graphics</li>
+                      <li>✓ 4 revisions</li>
+                    </>
+                  )}
+                  {idx === 2 && (
+                    <>
+                      <li>✓ Unlimited length</li>
+                      <li>✓ Full color grading</li>
+                      <li>✓ Custom animations</li>
+                      <li>✓ Sound design</li>
+                      <li>✓ Unlimited revisions</li>
+                    </>
+                  )}
+                </ul>
+                <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary w-full inline-block text-center">Select Plan</a>
+              </div>
+            ))}
+          </div>
+          <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-secondary text-lg px-8 py-6 inline-block">Request Custom Quote</a>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section id="faq" className="section-light py-20 md:py-32">
+      <section id="faq" className="section-dark py-20 md:py-32">
         <div className="container max-w-3xl">
           <h2 className="text-center mb-16">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqItems.map((item, idx) => (
-              <div key={idx} className="neobrutalist-card cursor-pointer" onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}>
+              <div key={idx} className="neobrutalist-card bg-card cursor-pointer" onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}>
                 <div className="flex items-center justify-between">
                   <h3 style={{ fontSize: "18px", color: "#FF6B4A" }}>{item.question}</h3>
                   <ChevronDown className={`transition-transform ${expandedFaq === idx ? "rotate-180" : ""}`} />
@@ -149,26 +310,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="section-dark py-20 md:py-32">
-        <div className="container text-center">
-          <h2 className="mb-16">Transparent Pricing, Exceptional Value</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {["Basic", "Standard", "Premium"].map((tier, idx) => (
-              <div key={idx} className="neobrutalist-card bg-card">
-                <h3 style={{ fontSize: "24px", color: "#FF6B4A" }}>{tier}</h3>
-                <div className="text-4xl font-bold my-6" style={{ color: "#FF6B4A" }}>
-                  ${[499, 999, 1999][idx]}
-                </div>
-                <p className="text-sm mb-6" style={{ fontFamily: "'Space Mono', monospace" }}>per project</p>
-                <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary w-full inline-block text-center">Select Plan</a>
-              </div>
-            ))}
-          </div>
-          <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-secondary text-lg px-8 py-6 mt-12 inline-block">Request Custom Quote</a>
         </div>
       </section>
 
@@ -196,17 +337,17 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-                <li><a href="#" className="hover:underline">Video Editing</a></li>
-                <li><a href="#" className="hover:underline">Motion Graphics</a></li>
-                <li><a href="#" className="hover:underline">Color Grading</a></li>
+                <li><a href="#services" className="hover:underline">Video Editing</a></li>
+                <li><a href="#services" className="hover:underline">Motion Graphics</a></li>
+                <li><a href="#services" className="hover:underline">Color Grading</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-                <li><a href="#" className="hover:underline">About Us</a></li>
-                <li><a href="#" className="hover:underline">Portfolio</a></li>
-                <li><a href="#" className="hover:underline">Contact</a></li>
+                <li><a href="#team" className="hover:underline">Team</a></li>
+                <li><a href="#portfolio" className="hover:underline">Portfolio</a></li>
+                <li><a href="#faq" className="hover:underline">FAQ</a></li>
               </ul>
             </div>
             <div>
