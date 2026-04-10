@@ -170,6 +170,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Problem-Solution Section */}
+      <section className="section-dark py-20 md:py-32">
+        <div className="container">
+          <h2 className="text-center mb-16">The Problem Most Creators Face</h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="neobrutalist-card" style={{ borderColor: "#FF6B4A" }}>
+              <h3 style={{ fontSize: "24px", color: "#FF6B4A" }} className="mb-6">Without Professional Editing</h3>
+              <ul className="space-y-4" style={{ fontFamily: "'Space Mono', monospace" }}>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Spending 15-20 hours editing each video</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Missing content deadlines and growth opportunities</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Lower quality output due to time constraints</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Inconsistent publishing schedule</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Unable to scale content production</span>
+                </li>
+              </ul>
+            </div>
+            <div className="neobrutalist-card" style={{ backgroundColor: "#FDF8D8", borderColor: "#FF6B4A" }}>
+              <h3 style={{ fontSize: "24px", color: "#FF6B4A" }} className="mb-6">With Cutlyst</h3>
+              <ul className="space-y-4" style={{ fontFamily: "'Space Mono', monospace" }}>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Reclaim 40-60 hours monthly for content creation</span>
+                </li>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Professional quality every single time</span>
+                </li>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Consistent publishing schedule maintained</span>
+                </li>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Scale content without scaling your team</span>
+                </li>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Focus on strategy and growth, not editing</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="section-dark py-20 md:py-32">
         <div className="container">

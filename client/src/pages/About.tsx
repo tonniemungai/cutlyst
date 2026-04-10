@@ -1,65 +1,70 @@
 import { useLocation } from "wouter";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function About() {
   const [, navigate] = useLocation();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-background border-b-2 border-foreground">
-        <div className="container flex items-center justify-between py-4">
-          <button onClick={() => navigate("/")} className="text-3xl font-bold" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>
-            Cutlyst
-          </button>
-          <nav className="hidden md:flex gap-8">
-            <button onClick={() => navigate("/")} className="hover:text-primary transition">Home</button>
-            <button onClick={() => navigate("/services")} className="hover:text-primary transition">Services</button>
-            <button onClick={() => navigate("/blog")} className="hover:text-primary transition">Blog</button>
-            <button onClick={() => navigate("/contact")} className="hover:text-primary transition">Contact</button>
-          </nav>
-          <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">Get a Quote</a>
-        </div>
-      </header>
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <Header />
 
       {/* Hero Section */}
       <section className="section-light py-20 md:py-32">
         <div className="container text-center">
-          <h1 className="mb-6">About Cutlyst Studios</h1>
+          <h1 className="mb-6">About Cutlyst</h1>
           <p className="text-xl max-w-2xl mx-auto" style={{ fontFamily: "'Space Mono', monospace" }}>
-            We're a team of passionate video editors dedicated to transforming raw footage into compelling visual stories that resonate with audiences.
+            Professional video editing that transforms your content into compelling stories that drive results.
           </p>
         </div>
       </section>
 
-      {/* Our Story Section */}
+      {/* CEO Story Section */}
       <section className="section-dark py-20 md:py-32">
-        <div className="container max-w-3xl">
-          <h2 className="mb-8">Our Story</h2>
-          <div className="space-y-6" style={{ fontFamily: "'Space Mono', monospace" }}>
-            <p>
-              Cutlyst Studios was founded with a simple mission: to deliver exceptional video editing services that help brands and creators tell their stories more effectively. What started as a small team of passionate editors has grown into a trusted partner for businesses of all sizes.
-            </p>
-            <p>
-              We believe that great video editing is more than just cutting and transitions. It's about understanding the narrative, respecting the audience's time, and creating an emotional connection through visual storytelling. Every project we work on is treated with the same level of care and attention to detail.
-            </p>
-            <p>
-              Over the years, we've had the privilege of working with startups, established brands, content creators, and agencies. Each project has taught us something new and helped us refine our craft. Today, we're proud to be recognized as a leader in professional video editing.
-            </p>
+        <div className="container">
+          <h2 className="text-center mb-16">Meet the Founder</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+            <div>
+              <img 
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663432093360/nD6SUFfkmCryuCdZNmutcT/1000643781_6bfc0d28.jpg" 
+                alt="Antony Mungai, CEO of Cutlyst" 
+                className="w-full rounded-lg border-3 border-foreground"
+              />
+            </div>
+            <div className="space-y-6" style={{ fontFamily: "'Space Mono', monospace" }}>
+              <div>
+                <h3 style={{ fontSize: "28px", color: "#FF6B4A" }} className="mb-2">Antony Mungai</h3>
+                <p className="text-lg font-bold">Founder & CEO</p>
+              </div>
+              <p>
+                I started Cutlyst because I saw a massive gap in the market. Content creators and entrepreneurs were spending countless hours on video editing when they should have been focused on what they do best—creating amazing content and growing their businesses.
+              </p>
+              <p>
+                After working with dozens of creators and agencies, I realized that professional video editing wasn't just a nice-to-have—it was essential for success. Yet most people either didn't have access to quality editors or couldn't afford them.
+              </p>
+              <p>
+                That's why I founded Cutlyst. I wanted to build a service that delivers Hollywood-quality editing at prices that make sense for growing businesses. Every project we take on is treated with the same care and attention I'd give to my own content.
+              </p>
+              <p>
+                Today, Cutlyst works with entrepreneurs, agencies, and creators across industries—from finance and tech to e-commerce and business. Our mission is simple: help you look professional, save time, and focus on what matters most.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Our Values Section */}
+      {/* Core Values Section */}
       <section className="section-light py-20 md:py-32">
         <div className="container">
-          <h2 className="text-center mb-16">Our Core Values</h2>
+          <h2 className="text-center mb-16">Why Cutlyst?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Excellence", description: "We never compromise on quality. Every frame is carefully crafted to meet the highest standards." },
-              { title: "Collaboration", description: "Your vision is our mission. We work closely with clients to ensure the final product exceeds expectations." },
-              { title: "Innovation", description: "We stay ahead of industry trends and constantly explore new techniques and technologies." },
+              { title: "Quality First", description: "We never compromise. Every edit, color grade, and sound design is perfected to Hollywood standards.", emoji: "🎬" },
+              { title: "Fast Turnaround", description: "We respect your timeline. Most projects delivered within 2-4 weeks. Rush services available.", emoji: "⚡" },
+              { title: "True Partnership", description: "Your vision matters. We collaborate closely to ensure the final product exceeds your expectations.", emoji: "🤝" },
             ].map((value, idx) => (
               <div key={idx} className="neobrutalist-card">
+                <p className="text-5xl mb-4">{value.emoji}</p>
                 <h3 style={{ fontSize: "24px", color: "#FF6B4A" }}>{value.title}</h3>
                 <p className="mt-4" style={{ fontFamily: "'Space Mono', monospace" }}>{value.description}</p>
               </div>
@@ -68,43 +73,107 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* What to Expect Section */}
       <section className="section-dark py-20 md:py-32">
-        <div className="container">
-          <h2 className="text-center mb-16">Leadership Team</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="container max-w-3xl">
+          <h2 className="text-center mb-16">What to Expect When Working With Us</h2>
+          <div className="space-y-8">
             {[
-              { name: "Alex Morgan", role: "Founder & Lead Editor", bio: "With over 10 years of experience in professional video editing, Alex founded Cutlyst with a vision to elevate video production standards." },
-              { name: "Jordan Lee", role: "Creative Director", bio: "Jordan brings a wealth of creative expertise, specializing in motion graphics and visual storytelling that captivates audiences." },
-              { name: "Casey Williams", role: "Sound Design Lead", bio: "Casey's passion for audio excellence ensures every project sounds as good as it looks, creating immersive experiences." },
-            ].map((member, idx) => (
-              <div key={idx} className="neobrutalist-card bg-card">
-                <div className="bg-muted h-40 rounded-lg mb-4 flex items-center justify-center">
-                  <div className="text-6xl">👤</div>
+              { step: "1", title: "Initial Consultation", description: "We discuss your project goals, vision, timeline, and any specific requirements. This is where we understand your brand and what success looks like for you." },
+              { step: "2", title: "Project Planning", description: "We create a detailed project plan, timeline, and deliverables. You'll know exactly what to expect and when to expect it." },
+              { step: "3", title: "Expert Execution", description: "Our team brings your vision to life with professional editing, color grading, sound design, and motion graphics as needed." },
+              { step: "4", title: "Revision & Refinement", description: "Your feedback matters. We provide revision rounds to ensure the final product is exactly what you envisioned." },
+              { step: "5", title: "Final Delivery", description: "We deliver your video in all required formats, optimized for your platforms—YouTube, Instagram, TikTok, or wherever you need it." },
+            ].map((item, idx) => (
+              <div key={idx} className="neobrutalist-card">
+                <div className="flex items-start gap-6">
+                  <div className="text-5xl font-bold text-primary flex-shrink-0">{item.step}</div>
+                  <div>
+                    <h3 style={{ fontSize: "22px", color: "#FF6B4A" }}>{item.title}</h3>
+                    <p className="mt-3" style={{ fontFamily: "'Space Mono', monospace" }}>{item.description}</p>
+                  </div>
                 </div>
-                <h3 style={{ fontSize: "22px", color: "#FF6B4A" }}>{member.name}</h3>
-                <p className="text-sm text-primary mt-2" style={{ fontFamily: "'Space Mono', monospace" }}>{member.role}</p>
-                <p className="mt-4 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>{member.bio}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Time & Productivity Benefits Section */}
       <section className="section-light py-20 md:py-32">
         <div className="container">
-          <h2 className="text-center mb-16">By The Numbers</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <h2 className="text-center mb-16">The Real Value: Time & Productivity</h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="neobrutalist-card">
+              <h3 style={{ fontSize: "28px", color: "#FF6B4A" }} className="mb-6">The Problem</h3>
+              <ul className="space-y-4" style={{ fontFamily: "'Space Mono', monospace" }}>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Spending 10-20 hours per week on video editing</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Losing focus on core business activities</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Producing lower-quality content due to time constraints</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Missing content deadlines and growth opportunities</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">✗</span>
+                  <span>Struggling to maintain consistent content output</span>
+                </li>
+              </ul>
+            </div>
+            <div className="neobrutalist-card" style={{ backgroundColor: "#FDF8D8", borderColor: "#FF6B4A" }}>
+              <h3 style={{ fontSize: "28px", color: "#FF6B4A" }} className="mb-6">The Cutlyst Solution</h3>
+              <ul className="space-y-4" style={{ fontFamily: "'Space Mono', monospace" }}>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Reclaim 40-60 hours per month to focus on content creation</span>
+                </li>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Concentrate on strategy, growth, and business development</span>
+                </li>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Deliver professional-quality videos consistently</span>
+                </li>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Maintain consistent publishing schedule and momentum</span>
+                </li>
+                <li className="flex gap-3">
+                  <span style={{ color: "#FF6B4A" }} className="font-bold">✓</span>
+                  <span>Scale content production without scaling your team</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="section-dark py-20 md:py-32">
+        <div className="container text-center">
+          <h2 className="mb-16">Industries We Specialize In</h2>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { number: "500+", label: "Projects Completed" },
-              { number: "50+", label: "Happy Clients" },
-              { number: "10+", label: "Years Experience" },
-              { number: "100%", label: "Satisfaction Rate" },
-            ].map((stat, idx) => (
-              <div key={idx} className="neobrutalist-card text-center">
-                <div className="text-5xl font-bold mb-4" style={{ color: "#FF6B4A" }}>{stat.number}</div>
-                <p style={{ fontFamily: "'Space Mono', monospace" }}>{stat.label}</p>
+              { name: "Business & Entrepreneurship", emoji: "💼" },
+              { name: "Technology & SaaS", emoji: "💻" },
+              { name: "Finance & Trading", emoji: "💹" },
+              { name: "E-commerce & Marketing", emoji: "🛍️" },
+              { name: "Newsletters & Content", emoji: "📧" },
+              { name: "Agencies & Services", emoji: "🤝" },
+            ].map((industry, idx) => (
+              <div key={idx} className="neobrutalist-card">
+                <p className="text-5xl mb-3">{industry.emoji}</p>
+                <p className="font-bold" style={{ fontFamily: "'Space Mono', monospace" }}>{industry.name}</p>
               </div>
             ))}
           </div>
@@ -112,56 +181,19 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-dark py-20 md:py-32">
+      <section className="section-light py-20 md:py-32">
         <div className="container text-center">
-          <h2 className="mb-8">Ready to Work Together?</h2>
-          <p className="text-lg mb-12 max-w-2xl mx-auto" style={{ fontFamily: "'Space Mono', monospace" }}>
-            Let's discuss your project and how we can bring your vision to life.
+          <h2 className="mb-8">Ready to Transform Your Content?</h2>
+          <p className="text-lg max-w-2xl mx-auto mb-12" style={{ fontFamily: "'Space Mono', monospace" }}>
+            Let's discuss how Cutlyst can help you save time, maintain quality, and scale your content production.
           </p>
-          <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-12 py-8 inline-block">Schedule a Consultation</a>
+          <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-8 py-6 inline-block">
+            Schedule a Free Consultation
+          </a>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground text-background border-t-2 border-background py-12">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="text-2xl font-bold mb-2" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>
-                Cutlyst
-              </div>
-              <p style={{ fontFamily: "'Space Mono', monospace" }}>Crafting visual stories with precision and punch.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-                <li><a href="/services" className="hover:underline">Video Editing</a></li>
-                <li><a href="/services" className="hover:underline">Motion Graphics</a></li>
-                <li><a href="/services" className="hover:underline">Color Grading</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-                <li><a href="/" className="hover:underline">Home</a></li>
-                <li><a href="/about" className="hover:underline">About</a></li>
-                <li><a href="/blog" className="hover:underline">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Follow Us</h4>
-              <ul className="space-y-2 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-                <li><a href="#" className="hover:underline">Instagram</a></li>
-                <li><a href="#" className="hover:underline">LinkedIn</a></li>
-                <li><a href="#" className="hover:underline">YouTube</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-background pt-8 text-center text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-            <p>&copy; 2026 Cutlyst Studios. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
