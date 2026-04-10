@@ -143,12 +143,16 @@ export default function Home() {
   ];
 
   const faqItems = [
-    { question: "What types of videos do you edit?", answer: "We specialize in corporate videos, commercials, social media content, documentaries, promotional videos, and more. Our team has experience across all genres and styles." },
-    { question: "What is your typical turnaround time?", answer: "Turnaround times vary based on project complexity. Most projects are completed within 2-4 weeks. Rush services are available upon request." },
-    { question: "Do you offer revisions?", answer: "Yes! We include multiple revision rounds in our standard packages to ensure you're completely satisfied with the final product." },
-    { question: "What formats do you deliver in?", answer: "We deliver in all standard formats including MP4, MOV, ProRes, and more. We can also optimize for specific platforms like YouTube, Instagram, or TikTok." },
-    { question: "Can you work with raw footage from any camera?", answer: "Absolutely! We work with footage from all professional and consumer cameras, including DSLRs, mirrorless, cinema cameras, and smartphones." },
-    { question: "Do you offer color grading services?", answer: "Yes, color grading and color correction are included in our premium packages and available as standalone services." },
+    { question: "What types of videos do you edit?", answer: "We specialize in corporate videos, commercials, social media content, documentaries, promotional videos, explainer videos, and more. Our team has experience across all genres and industries—from business and tech to finance and e-commerce." },
+    { question: "What is your typical turnaround time?", answer: "Turnaround times vary based on project complexity and scope. Most projects are completed within 2-4 weeks. We also offer rush services for urgent projects. During consultation, we'll give you an exact timeline based on your specific needs." },
+    { question: "Do you offer revisions?", answer: "Yes! Revisions are included in all our packages. The number of revision rounds depends on your tier (2 rounds for single videos, unlimited for larger packages). We keep revising until you're completely satisfied." },
+    { question: "What formats do you deliver in?", answer: "We deliver in all standard formats including MP4, MOV, ProRes, and more. We can also optimize for specific platforms like YouTube, Instagram, TikTok, LinkedIn, and Facebook. Just let us know where your video will live." },
+    { question: "Can you work with raw footage from any camera?", answer: "Absolutely! We work with footage from all professional and consumer cameras, including DSLRs, mirrorless, cinema cameras, and even smartphones. We can also work with screen recordings, animations, and stock footage." },
+    { question: "Do you offer color grading services?", answer: "Yes, color grading and color correction are included in our premium packages and available as standalone services. We can create cinematic looks, match specific aesthetics, or ensure consistency across multiple videos." },
+    { question: "How much time will I save by outsourcing editing?", answer: "Most creators spend 10-20 hours per week on editing. By outsourcing to Cutlyst, you reclaim 40-60 hours monthly to focus on content creation, strategy, and growing your business. That's the real value of our service." },
+    { question: "What if I'm not happy with the final product?", answer: "We offer a 30-day satisfaction guarantee. If you're not completely satisfied, we'll work with you until you are. Your success is our success, and we stand behind our work." },
+    { question: "How do we get started?", answer: "Simply schedule a free consultation using the link on this page. We'll discuss your project, understand your vision, and provide a custom quote. No obligation—just a conversation about how we can help." },
+    { question: "Do you work with international clients?", answer: "Yes! We work with clients worldwide. We communicate via email, video calls, and project management tools. Time zones are never an issue—we deliver on time, every time." },
   ];
 
   return (
