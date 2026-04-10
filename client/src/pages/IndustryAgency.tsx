@@ -10,7 +10,7 @@ export default function IndustryAgency() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b-2 border-foreground">
         <div className="container flex items-center justify-between py-4">
-          <a href="/" className="text-3xl font-bold" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>PixelCut</a>
+          <a href="/" className="text-3xl font-bold" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>Cutlyst</a>
           <a href="/" className="flex items-center gap-2 btn-primary px-6 py-2">
             <ChevronLeft size={20} />
             Back to Portfolio

@@ -9,7 +9,7 @@ export default function About() {
       <header className="sticky top-0 z-50 bg-background border-b-2 border-foreground">
         <div className="container flex items-center justify-between py-4">
           <button onClick={() => navigate("/")} className="text-3xl font-bold" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>
-            PixelCut
+            Cutlyst
           </button>
           <nav className="hidden md:flex gap-8">
             <button onClick={() => navigate("/")} className="hover:text-primary transition">Home</button>
@@ -24,7 +24,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="section-light py-20 md:py-32">
         <div className="container text-center">
-          <h1 className="mb-6">About PixelCut Studios</h1>
+          <h1 className="mb-6">About Cutlyst Studios</h1>
           <p className="text-xl max-w-2xl mx-auto" style={{ fontFamily: "'Space Mono', monospace" }}>
             We're a team of passionate video editors dedicated to transforming raw footage into compelling visual stories that resonate with audiences.
           </p>
@@ -37,7 +37,7 @@ export default function About() {
           <h2 className="mb-8">Our Story</h2>
           <div className="space-y-6" style={{ fontFamily: "'Space Mono', monospace" }}>
             <p>
-              PixelCut Studios was founded with a simple mission: to deliver exceptional video editing services that help brands and creators tell their stories more effectively. What started as a small team of passionate editors has grown into a trusted partner for businesses of all sizes.
+              Cutlyst Studios was founded with a simple mission: to deliver exceptional video editing services that help brands and creators tell their stories more effectively. What started as a small team of passionate editors has grown into a trusted partner for businesses of all sizes.
             </p>
             <p>
               We believe that great video editing is more than just cutting and transitions. It's about understanding the narrative, respecting the audience's time, and creating an emotional connection through visual storytelling. Every project we work on is treated with the same level of care and attention to detail.
@@ -74,7 +74,7 @@ export default function About() {
           <h2 className="text-center mb-16">Leadership Team</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Alex Morgan", role: "Founder & Lead Editor", bio: "With over 10 years of experience in professional video editing, Alex founded PixelCut with a vision to elevate video production standards." },
+              { name: "Alex Morgan", role: "Founder & Lead Editor", bio: "With over 10 years of experience in professional video editing, Alex founded Cutlyst with a vision to elevate video production standards." },
               { name: "Jordan Lee", role: "Creative Director", bio: "Jordan brings a wealth of creative expertise, specializing in motion graphics and visual storytelling that captivates audiences." },
               { name: "Casey Williams", role: "Sound Design Lead", bio: "Casey's passion for audio excellence ensures every project sounds as good as it looks, creating immersive experiences." },
             ].map((member, idx) => (
@@ -128,7 +128,7 @@ export default function About() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="text-2xl font-bold mb-2" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>
-                PixelCut
+                Cutlyst
               </div>
               <p style={{ fontFamily: "'Space Mono', monospace" }}>Crafting visual stories with precision and punch.</p>
             </div>
@@ -158,7 +158,7 @@ export default function About() {
             </div>
           </div>
           <div className="border-t border-background pt-8 text-center text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-            <p>&copy; 2026 PixelCut Studios. All rights reserved.</p>
+            <p>&copy; 2026 Cutlyst Studios. All rights reserved.</p>
           </div>
         </div>
       </footer>

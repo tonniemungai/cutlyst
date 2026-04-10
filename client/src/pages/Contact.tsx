@@ -29,7 +29,7 @@ export default function Contact() {
       <header className="sticky top-0 z-50 bg-background border-b-2 border-foreground">
         <div className="container flex items-center justify-between py-4">
           <button onClick={() => navigate("/")} className="text-3xl font-bold" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>
-            PixelCut
+            Cutlyst
           </button>
           <nav className="hidden md:flex gap-8">
             <button onClick={() => navigate("/")} className="hover:text-primary transition">Home</button>
@@ -202,7 +202,7 @@ export default function Contact() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="text-2xl font-bold mb-2" style={{ fontFamily: "'Chewy', cursive", color: "#FF6B4A" }}>
-                PixelCut
+                Cutlyst
               </div>
               <p style={{ fontFamily: "'Space Mono', monospace" }}>Crafting visual stories with precision and punch.</p>
             </div>
@@ -233,7 +233,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="border-t border-background pt-8 text-center text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
-            <p>&copy; 2026 PixelCut Studios. All rights reserved.</p>
+            <p>&copy; 2026 Cutlyst Studios. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -90,20 +90,25 @@ export default function Home() {
 
 
   const clientLogos = [
-    { name: "TechFlow Inc.", emoji: "🏢" },
-    { name: "Creative Agency Co.", emoji: "🎬" },
-    { name: "StartUp Ventures", emoji: "🚀" },
-    { name: "Digital Media Group", emoji: "📱" },
+    { name: "Cinematic.co.ke", emoji: "🎬" },
+    { name: "Leadscraping.io", emoji: "🔍" },
+    { name: "Newsletterfy.com", emoji: "📧" },
+    { name: "Socialitix.com", emoji: "📱" },
+    { name: "Forextrader.co.ke", emoji: "💹" },
+    { name: "RemoteJobsApp", emoji: "💼" },
+    { name: "Tonnie Mungai", emoji: "🎥" },
   ];
 
 
 
   
-  const mediaFeatures = [
-    { publication: "Video Production Weekly", emoji: "📺" },
-    { publication: "Creative Insider", emoji: "🎥" },
-    { publication: "Tech Media Today", emoji: "📰" },
-    { publication: "Industry Awards 2025", emoji: "🌟" },
+  const industries = [
+    { name: "Business & Entrepreneurship", emoji: "💼" },
+    { name: "Technology & SaaS", emoji: "💻" },
+    { name: "Finance & Trading", emoji: "💹" },
+    { name: "E-commerce & Marketing", emoji: "🛍️" },
+    { name: "Newsletters & Content", emoji: "📧" },
+    { name: "Agencies & Services", emoji: "🤝" },
   ];
 
   const awards = [
@@ -113,15 +118,22 @@ export default function Home() {
   ];
 
   const caseStudies = [
-    { title: "SaaS Company Launch", client: "TechFlow Inc.", challenge: "Create a compelling launch video in 2 weeks.", result: "Delivered a 3-minute promotional video that generated 50K views in first week." },
-    { title: "Educational Content Series", client: "Online Learning Platform", challenge: "Produce 12 training videos with consistent branding.", result: "Completed series on time with 95% client satisfaction rating." },
+    { title: "Cinematic Content Series", client: "Cinematic.co.ke", challenge: "Produce 20+ high-quality videos monthly with consistent branding.", result: "Increased engagement by 300% and established as industry leader in video content." },
+    { title: "Lead Generation Videos", client: "Leadscraping.io", challenge: "Create compelling product demo and explainer videos.", result: "Reduced customer acquisition cost by 40% through improved video marketing." },
+  ];
+
+  const pricingTiers = [
+    { videos: 1, price: 250, description: "Single project or video", features: ["Professional editing", "Color grading", "Sound design", "2 revision rounds"] },
+    { videos: 3, price: 650, description: "3 videos or projects", features: ["Professional editing", "Color grading", "Sound design", "Unlimited revisions", "Priority support"] },
+    { videos: 5, price: 950, description: "5 videos or projects", features: ["Professional editing", "Color grading", "Sound design", "Motion graphics", "Unlimited revisions", "Dedicated account manager"] },
+    { videos: 10, price: 1450, description: "10 videos or projects", features: ["Professional editing", "Color grading", "Sound design", "Motion graphics", "Custom animations", "Unlimited revisions", "Dedicated account manager", "Monthly strategy calls"] },
   ];
 
   const testimonials = [
-    { name: "Sarah Chen", company: "TechFlow Inc.", text: "PixelCut Studios transformed our product launch video. The quality and professionalism exceeded our expectations!", rating: 5 },
-    { name: "Marcus Johnson", company: "Creative Agency Co.", text: "Fast turnaround, excellent communication, and stunning results. Highly recommended for any video editing needs.", rating: 5 },
-    { name: "Emma Rodriguez", company: "StartUp Ventures", text: "The team understood our vision perfectly and delivered exactly what we needed. Great attention to detail!", rating: 5 },
-    { name: "David Kim", company: "Digital Media Group", text: "Professional, reliable, and creative. PixelCut Studios is now our go-to partner for all video projects.", rating: 5 },
+    { name: "CEO", company: "Cinematic.co.ke", text: "Cutlyst transformed our video production workflow. Their editing quality is exceptional and turnaround times are incredibly fast.", rating: 5 },
+    { name: "Founder", company: "Leadscraping.io", text: "Working with Cutlyst has been a game-changer. They understand our brand and deliver videos that convert leads into customers.", rating: 5 },
+    { name: "Marketing Lead", company: "Newsletterfy.com", text: "Consistent quality, reliable delivery, and creative excellence. Cutlyst is our trusted partner for all video content.", rating: 5 },
+    { name: "Director", company: "Socialitix.com", text: "Their team brings our vision to life with stunning visuals and professional editing. Highly recommended!", rating: 5 },
   ];
 
   const teamMembers = [
@@ -275,12 +287,12 @@ export default function Home() {
           </div>
 
           <div className="bg-card border-2 border-foreground rounded-lg p-8 mb-16">
-            <h3 style={{ fontSize: "24px", color: "#FF6B4A" }} className="text-center mb-8">As Featured In</h3>
-            <div className="grid md:grid-cols-4 gap-6 text-center">
-              {mediaFeatures.map((mention, idx) => (
+            <h3 style={{ fontSize: "24px", color: "#FF6B4A" }} className="text-center mb-8">Industries We Serve</h3>
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              {industries.map((industry, idx) => (
                 <div key={idx} style={{ fontFamily: "'Space Mono', monospace" }}>
-                  <p className="text-lg font-bold text-primary">{mention.emoji}</p>
-                  <p className="text-sm mt-2">{mention.publication}</p>
+                  <p className="text-lg font-bold text-primary">{industry.emoji}</p>
+                  <p className="text-sm mt-2">{industry.name}</p>
                 </div>
               ))}
             </div>
@@ -372,7 +384,7 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section className="section-light py-20 md:py-32">
         <div className="container">
-          <h2 className="text-center mb-16">The PixelCut Advantage</h2>
+          <h2 className="text-center mb-16">The Cutlyst Advantage</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {advantages.map((adv, idx) => (
               <div key={idx} className="neobrutalist-card">
@@ -413,39 +425,18 @@ export default function Home() {
       <section className="section-light py-20 md:py-32">
         <div className="container text-center">
           <h2 className="mb-16">Transparent Pricing, Exceptional Value</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-            {["Basic", "Standard", "Premium"].map((tier, idx) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-12">
+            {pricingTiers.map((tier, idx) => (
               <div key={idx} className="neobrutalist-card">
-                <h3 style={{ fontSize: "24px", color: "#FF6B4A" }}>{tier}</h3>
+                <h3 style={{ fontSize: "20px", color: "#FF6B4A" }}>{tier.videos} {tier.videos === 1 ? "Video" : "Videos"}</h3>
                 <div className="text-4xl font-bold my-6" style={{ color: "#FF6B4A" }}>
-                  ${[499, 999, 1999][idx]}
+                  ${tier.price}
                 </div>
-                <p className="text-sm mb-6" style={{ fontFamily: "'Space Mono', monospace" }}>per project</p>
+                <p className="text-sm mb-6" style={{ fontFamily: "'Space Mono', monospace" }}>{tier.description}</p>
                 <ul className="text-sm mb-6 space-y-2 text-left" style={{ fontFamily: "'Space Mono', monospace" }}>
-                  {idx === 0 && (
-                    <>
-                      <li>✓ Up to 5 min video</li>
-                      <li>✓ Basic editing</li>
-                      <li>✓ 2 revisions</li>
-                    </>
-                  )}
-                  {idx === 1 && (
-                    <>
-                      <li>✓ Up to 15 min video</li>
-                      <li>✓ Advanced editing</li>
-                      <li>✓ Motion graphics</li>
-                      <li>✓ 4 revisions</li>
-                    </>
-                  )}
-                  {idx === 2 && (
-                    <>
-                      <li>✓ Unlimited length</li>
-                      <li>✓ Full color grading</li>
-                      <li>✓ Custom animations</li>
-                      <li>✓ Sound design</li>
-                      <li>✓ Unlimited revisions</li>
-                    </>
-                  )}
+                  {tier.features.map((feature, fidx) => (
+                    <li key={fidx}>✓ {feature}</li>
+                  ))}
                 </ul>
                 <a href="https://calendly.com/videoediting/meeting" target="_blank" rel="noopener noreferrer" className="btn-primary w-full inline-block text-center">Select Plan</a>
               </div>
